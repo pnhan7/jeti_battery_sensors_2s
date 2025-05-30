@@ -8,7 +8,7 @@
 - 6.8k ressitor
 - 1uF capacitor
 - 0.1uF capacitor
-- diode Zener 5.1V
+- Zener diode 5.1V
 - PTC 100mA
 ---
 
@@ -33,8 +33,8 @@
 | R1_OUT     | R2_IN       |
 | R2_OUT     | GND       |
 | GND        | Battery Negative |
-| Didode Zener Cathode     | A0       |
-| Didode Zener Athode     | GND       |
+| Zener Didode  Cathode     | A0       |
+| Zener Didode Zener Anode     | GND       |
 | C(0.1uF)     | A0       |
 | C(0.1uF)     | GND       |
 | C(1uF)     | A0       |
