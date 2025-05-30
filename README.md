@@ -1,4 +1,4 @@
-# Reading INA219 Sensors
+# Reading Battery Voltage Using Divider
 
 ## Overview
 - Supports up to 4 dividers.
