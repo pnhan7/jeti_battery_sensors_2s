@@ -26,29 +26,19 @@
 ---
 
 ### **Devices connection schematic**
-| Node 1 | Node 2 |
-|------------|------------------|
-| R1_IN      | Battery Positive      |
-| R1_OUT     | R2_IN       |
-| R1_OUT/R2_IN     | A0          |
-| R2_OUT     | GND       |
-| GND        | Battery Negative |
-| ZD Cathode     | A0       |
-| ZD Anode     | GND       |
-| C1(0.1uF)     | A0       |
-| C1(0.1uF)     | GND       |
-| C2(1uF)     | A0       |
-| C2(1uF)     | GND       |
+
 ```
 Battery(+)
      |
-     R1
+     PTC(100ma)
+     |
+     R1(10k)
      |  
-     +---------+-------+-------+------>A0
-     |         |(A)    |       |
-     R2        ZD      C1      C2
-     |         |(C)    |       |
-     +---------+-------+-------+------>GND
+     +--------+--------+--------+--------> A0
+     |        |(A)     |        |
+     R2(6.8K) ZD(5.1V) C1(1uF)  C2(0.1uF)
+     |        |(C)     |        |
+     +--------+--------+--------+-------> GND
      |
 Battery(-)
 
