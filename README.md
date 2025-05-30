@@ -25,19 +25,21 @@
 
 ---
 
-### **Devices to Battery**
-| INA219 Pin | Battery Terminal |
+### **Devices connection schematic**
+| Node 1 | Node 2 |
 |------------|------------------|
-| R1_IN      | Positive      |
+| R1_IN      | Battery Positive      |
 | R1_OUT     | A0           |
-| R1_OUT     | R2_OUT       |
+| R1_OUT     | R2_IN       |
+| R2_OUT     | GND       |
+| GND        | Battery Negative |
 | Didode Cathode     | A0       |
 | Didode Athode     | GND       |
 | C(0.1uF)     | A0       |
 | C(0.1uF)     | GND       |
 | C(1uF)     | A0       |
 | C(1uF)     | GND       |
-| GND        | Negative         |
+
 
 ---
 
