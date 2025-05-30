@@ -33,8 +33,8 @@
 | R1_OUT     | R2_IN       |
 | R2_OUT     | GND       |
 | GND        | Battery Negative |
-| Didode Cathode     | A0       |
-| Didode Athode     | GND       |
+| Didode Zener Cathode     | A0       |
+| Didode Zener Athode     | GND       |
 | C(0.1uF)     | A0       |
 | C(0.1uF)     | GND       |
 | C(1uF)     | A0       |
