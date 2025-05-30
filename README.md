@@ -29,14 +29,14 @@
 | Node 1 | Node 2 |
 |------------|------------------|
 | R1_IN      | Battery Positive      |
-| R1_OUT     | A0           |
 | R1_OUT     | R2_IN       |
+| R1_OUT/R2_IN     | A0           |
 | R2_OUT     | GND       |
 | GND        | Battery Negative |
 | ZD Cathode     | A0       |
 | ZD Anode     | GND       |
 | C1(0.1uF)     | A0       |
-| C2(0.1uF)     | GND       |
+| C1(0.1uF)     | GND       |
 | C2(1uF)     | A0       |
 | C2(1uF)     | GND       |
 
