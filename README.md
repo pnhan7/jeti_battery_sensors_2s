@@ -3,12 +3,12 @@
 ## Overview
 - Supports up to 4 dividers.
 - Arduino Pro Mini(5v/16MHz)
-- 2.4k ressitor
-- 10k ressitor
-- 6.8k ressitor
-- 1uF capacitor
-- 0.1uF capacitor
-- Zener diode 5.1V
+- R = 2.4k ressitor
+- R1 = 10k ressitor
+- R2 = 6.8k ressitor
+- C1 = 0.1uF capacitor
+- C2 = 1uF capacitor
+- ZD = Zener Diode 5.1V
 - PTC 100mA
 ---
 
@@ -33,12 +33,12 @@
 | R1_OUT     | R2_IN       |
 | R2_OUT     | GND       |
 | GND        | Battery Negative |
-| Zener Didode  Cathode     | A0       |
-| Zener Didode Zener Anode     | GND       |
-| C(0.1uF)     | A0       |
-| C(0.1uF)     | GND       |
-| C(1uF)     | A0       |
-| C(1uF)     | GND       |
+| ZD Cathode     | A0       |
+| ZD Anode     | GND       |
+| C1(0.1uF)     | A0       |
+| C2(0.1uF)     | GND       |
+| C2(1uF)     | A0       |
+| C2(1uF)     | GND       |
 
 
 ---
