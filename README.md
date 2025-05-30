@@ -39,7 +39,7 @@
 | C1(0.1uF)     | GND       |
 | C2(1uF)     | A0       |
 | C2(1uF)     | GND       |
-
+```
 Battery Positive
      |
      R1
@@ -51,7 +51,7 @@ Battery Positive
            |
           GND -------------- Battery Negative
 
-
+```
 ---
 
 ### **Pins for Multiple Divider**
