@@ -30,7 +30,7 @@
 |------------|------------------|
 | R1_IN      | Battery Positive      |
 | R1_OUT     | R2_IN       |
-| R1_OUT/R2_IN     | A0/A1/A2/A3           |
+| R1_OUT/R2_IN     | A0          |
 | R2_OUT     | GND       |
 | GND        | Battery Negative |
 | ZD Cathode     | A0       |
