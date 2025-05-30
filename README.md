@@ -44,12 +44,13 @@ Battery Positive
      |
      R1
      |  
-     +-------- A0 --------+-------+-------+
-     |                  ZD Cathode  C1      C2
-     |                    |        |        |
-     +----- R2         ZD Anode     GND      GND
-           |
-          GND -------------- Battery Negative
+     +---------+-------+-------+------>A0
+     |         |(A)    |       |
+     R2        ZD      C1      C2
+     |         |(C)    |       |
+     +---------+-------+-------+------>GND
+     |
+Battery Negative
 
 ```
 ---
