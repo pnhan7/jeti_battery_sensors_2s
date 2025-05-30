@@ -1,3 +1,23 @@
+/*
+   -----------------------------------------------------------
+                Jeti Test Sensor v 1.0
+   -----------------------------------------------------------
+
+    Tero Salminen RC-Thoughts.com (c) 2017 www.rc-thoughts.com
+
+  -----------------------------------------------------------
+
+    Simple test sensor with two potentiometers and two 3-pos
+    switches. 
+
+    Bothe sensora are selectable to work in three ranges: 
+    0 - 100, 0 - 1000 and 0 - 10000. 
+
+  -----------------------------------------------------------
+    Shared under MIT-license by Tero Salminen (c) 2017
+  -----------------------------------------------------------
+*/
+
 #include <EEPROM.h>
 #include <stdlib.h>
 #include "SoftwareSerialJeti.h"
@@ -14,20 +34,25 @@
 #define JETI_TX 4
 #endif
 
-#define ITEMNAME_1 F("CDI")
+#define ITEMNAME_1 F("1")
 #define ITEMTYPE_1 F("V")
-#define ITEMVAL_1 &sens_voltage1
+#define ITEMVAL_1 &voltage1
 
-#define ITEMNAME_2 F("Gear")
+#define ITEMNAME_2 F("2")
 #define ITEMTYPE_2 F("V")
-#define ITEMVAL_2 &sens_voltage2
+#define ITEMVAL_2 &voltage2
 
-#define ITEMNAME_3 F("LED")
+#define ITEMNAME_3 F("3")
 #define ITEMTYPE_3 F("V")
-#define ITEMVAL_3 &sens_voltage3
+#define ITEMVAL_3 &voltage3
 
-#define ABOUT_1 F(" Voltage Sensor")
-#define ABOUT_2 F("Voltage Sensor")
+#define ITEMNAME_4 F("4")
+#define ITEMTYPE_4 F("V")
+#define ITEMVAL_4 &voltage4
+
+
+#define ABOUT_1 F(" Battery")
+#define ABOUT_2 F("Battery")
 
 SoftwareSerial JetiSerial(JETI_RX, JETI_TX);
 
@@ -92,9 +117,10 @@ const float conversionConstant = VREF / 1023.0;  // Convert ADC value to voltage
 const float dividerRatio = (R1 + R2) / R2;       // Voltage divider ratio
 
 float correctionFactor = 1.0;
-float sens_voltage1 = 0.0;
-float sens_voltage2 = 0.0;
-float sens_voltage3 = 0.0;
+float voltage1 = 0.0;
+float voltage2 = 0.0;
+float voltage3 = 0.0;
+float voltage4 = 0.0;
 float readInputVoltage(int analogPin) {
   int rawADC = analogRead(analogPin);
   if(rawADC<500){
@@ -116,7 +142,7 @@ void setup() {
   JetiUartInit();
 
   JB.JetiBox(ABOUT_1, ABOUT_2);
-  JB.Init(F("Voltage"));
+  JB.Init(F("Battery"));
 
   JB.addData(ITEMNAME_1, ITEMTYPE_1);
   JB.setValue(1, ITEMVAL_1, 2);
@@ -126,6 +152,9 @@ void setup() {
 
   JB.addData(ITEMNAME_3, ITEMTYPE_3);
   JB.setValue(3, ITEMVAL_3, 2);
+
+  JB.addData(ITEMNAME_4, ITEMTYPE_4);
+  JB.setValue(4, ITEMVAL_3, 4);
 
   do {
     JB.createFrame(1);
@@ -160,9 +189,11 @@ void process_screens() {
 
 void loop() {
 
-  sens_voltage1 = readInputVoltage(A0);
-  sens_voltage2 = readInputVoltage(A1);
-  sens_voltage3 = readInputVoltage(A2);
+  voltage1 = readInputVoltage(A0);
+  voltage2 = readInputVoltage(A1);
+  voltage3 = readInputVoltage(A2);
+  voltage4 = readInputVoltage(A3);
+
   unsigned long time = millis();
   SendFrame();
   time = millis();
@@ -256,20 +287,25 @@ void loop() {
 #define JETI_TX 4
 #endif
 
-#define ITEMNAME_1 F("CDI")
+#define ITEMNAME_1 F("1")
 #define ITEMTYPE_1 F("V")
-#define ITEMVAL_1 &sens_voltage1
+#define ITEMVAL_1 &voltage1
 
-#define ITEMNAME_2 F("Gear")
+#define ITEMNAME_2 F("2")
 #define ITEMTYPE_2 F("V")
-#define ITEMVAL_2 &sens_voltage2
+#define ITEMVAL_2 &voltage2
 
-#define ITEMNAME_3 F("LED")
+#define ITEMNAME_3 F("3")
 #define ITEMTYPE_3 F("V")
-#define ITEMVAL_3 &sens_voltage3
+#define ITEMVAL_3 &voltage3
 
-#define ABOUT_1 F(" Voltage Sensor")
-#define ABOUT_2 F("Voltage Sensor")
+#define ITEMNAME_4 F("4")
+#define ITEMTYPE_4 F("V")
+#define ITEMVAL_4 &voltage4
+
+
+#define ABOUT_1 F(" Battery")
+#define ABOUT_2 F("Battery")
 
 SoftwareSerial JetiSerial(JETI_RX, JETI_TX);
 
@@ -334,9 +370,10 @@ const float conversionConstant = VREF / 1023.0;  // Convert ADC value to voltage
 const float dividerRatio = (R1 + R2) / R2;       // Voltage divider ratio
 
 float correctionFactor = 1.0;
-float sens_voltage1 = 0.0;
-float sens_voltage2 = 0.0;
-float sens_voltage3 = 0.0;
+float voltage1 = 0.0;
+float voltage2 = 0.0;
+float voltage3 = 0.0;
+float voltage4 = 0.0;
 float readInputVoltage(int analogPin) {
   int rawADC = analogRead(analogPin);
   if(rawADC<500){
@@ -358,7 +395,7 @@ void setup() {
   JetiUartInit();
 
   JB.JetiBox(ABOUT_1, ABOUT_2);
-  JB.Init(F("Voltage"));
+  JB.Init(F("Battery"));
 
   JB.addData(ITEMNAME_1, ITEMTYPE_1);
   JB.setValue(1, ITEMVAL_1, 2);
@@ -368,6 +405,9 @@ void setup() {
 
   JB.addData(ITEMNAME_3, ITEMTYPE_3);
   JB.setValue(3, ITEMVAL_3, 2);
+
+  JB.addData(ITEMNAME_4, ITEMTYPE_4);
+  JB.setValue(4, ITEMVAL_3, 4);
 
   do {
     JB.createFrame(1);
@@ -402,9 +442,11 @@ void process_screens() {
 
 void loop() {
 
-  sens_voltage1 = readInputVoltage(A0);
-  sens_voltage2 = readInputVoltage(A1);
-  sens_voltage3 = readInputVoltage(A2);
+  voltage1 = readInputVoltage(A0);
+  voltage2 = readInputVoltage(A1);
+  voltage3 = readInputVoltage(A2);
+  voltage4 = readInputVoltage(A3);
+
   unsigned long time = millis();
   SendFrame();
   time = millis();
