@@ -6,8 +6,8 @@
 - R = 2.4k ressitor
 - R1 = 10k ressitor
 - R2 = 6.8k ressitor
-- C1 = 0.1uF capacitor
-- C2 = 1uF capacitor
+- C1 = 1uF capacitor
+- C2 = 0.1uF capacitor
 - ZD = Zener Diode 5.1V
 - PTC 100mA
 ---
