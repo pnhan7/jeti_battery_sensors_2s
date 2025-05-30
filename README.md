@@ -15,11 +15,11 @@
 ## Connection Diagram
 
 ### **RX to Arduino**
-| RX Pin   | Arduino Pin         |
+| Ext/E1/E2 Port   | Arduino Pin         |
 |----------|---------------------|
-| GND      | GND                 |
-| VDD      | RAW                 |
-| Ext/E1   | D3                  |
+| -      | GND                 |
+| +      | RAW                 |
+| (signal)   | D3                  |
 | -        | D3 → R (2.4kΩ) → D4 |
 
 
