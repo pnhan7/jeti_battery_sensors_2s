@@ -40,7 +40,7 @@
 | C2(1uF)     | A0       |
 | C2(1uF)     | GND       |
 ```
-Battery Positive
+Battery(+)
      |
      R1
      |  
@@ -50,7 +50,7 @@ Battery Positive
      |         |(C)    |       |
      +---------+-------+-------+------>GND
      |
-Battery Negative
+Battery(-)
 
 ```
 ---
